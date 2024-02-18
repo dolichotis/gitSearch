@@ -1,0 +1,48 @@
+body {
+    background: #ededed;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.searchLine {
+    background: #fff;
+    border-radius: 5px;
+}
+
+.searchInput {
+    width: 300px;
+    height: 25px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 1px 5px #e4e4e4;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.requestsBox {
+    /* padding: 5px 10px; */
+    margin: 0;
+    display: none;
+}
+
+.active {
+    padding: 5px 10px;
+    display: block;
+}
+
+.request {
+    padding: 5px 10px;
+    list-style: none;
+    border-radius: 3px;
+    
+}
+
+.request:hover {
+    background: #f8f7f7;
+}
