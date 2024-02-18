@@ -48,12 +48,12 @@ class Search {
                 if (res.ok) res.json().then(res => {
                     console.log(res);
                     res.items.forEach(repo => this.view.createRepo(repo));
-                    this.view.requestsBox.classList.toggle('active');
+                    this.view.requestsBox.classList.add('active');
                 })
             })
         } else {
             this.clearRepos();
-            this.view.requestsBox.classList.toggle('active');
+            this.view.requestsBox.classList.remove('active');
         }
         
     }
