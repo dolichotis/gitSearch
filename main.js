@@ -3,7 +3,7 @@ class View {
         this.app = document.getElementById('app');
 
         this.title = this.createElement('h1', 'title');
-        this.title.textContent = 'Search GitHub';
+        this.title.textContent = 'Search GIT repositories';
 
         this.searchLine = this.createElement('div', 'searchLine');
         this.searchInput = this.createElement('input', 'searchInput');
@@ -54,7 +54,7 @@ const REPO_PER_PAGE = 5;
 class Search {
     constructor(view) {
         this.view = view;
-        this.view.searchInput.addEventListener('keyup', this.debounce(this.searchRepos.bind(this), 300));
+        this.view.searchInput.addEventListener('keyup', this.debounce(this.searchRepos.bind(this), 400));
     }
 
     async searchRepos() {

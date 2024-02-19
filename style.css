@@ -15,7 +15,7 @@ body {
 }
 
 .searchInput {
-    width: 300px;
+    width: 350px;
     height: 25px;
     outline: none;
     border: none;
@@ -29,7 +29,7 @@ body {
     /* padding: 5px 10px; */
     margin: 0;
     display: none;
-    max-width: 320px;
+    max-width: 370px;
 }
 
 .active {
@@ -54,7 +54,7 @@ body {
 
 .card {
     background: #e2b9f0;
-    width: 300px;
+    width: 350px;
     padding: 10px 20px;
     border-radius: 3px;
     white-space: pre-line;
