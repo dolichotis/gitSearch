@@ -29,6 +29,7 @@ body {
     /* padding: 5px 10px; */
     margin: 0;
     display: none;
+    max-width: 320px;
 }
 
 .active {
@@ -40,9 +41,36 @@ body {
     padding: 5px 10px;
     list-style: none;
     border-radius: 3px;
-    
+    overflow: hidden;
 }
 
 .request:hover {
     background: #f8f7f7;
+}
+
+.main {
+    margin-top: 20px;
+}
+
+.card {
+    background: #e2b9f0;
+    width: 300px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    white-space: pre-line;
+    position: relative;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.btnDelete {
+    width: 40px;
+    height: 40px;
+    background: url('img/Vector\ 7.svg') no-repeat,
+                url('img/Vector\ 8.svg') no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    margin: auto;
+    position: absolute;
+    top: 0; bottom: 0; right: 20px;
 }

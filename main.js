@@ -11,10 +11,11 @@ class View {
         this.searchLine.append(this.searchInput);
         this.searchLine.append(this.requestsBox);
         
-        //this.main = this.createElement('div', 'main');
+        this.main = this.createElement('div', 'main');
 
         this.app.append(this.title);
         this.app.append(this.searchLine);
+        this.app.append(this.main);
     }
 
     createElement(elementTag, elementClass) {
@@ -27,7 +28,24 @@ class View {
     createRepo(repoData) {
         const request = this.createElement('li', 'request');
         request.innerHTML = `${repoData.name}`;
+        request.addEventListener('click', () => {
+            this.createCard(repoData);
+        })
         this.requestsBox.append(request);
+    }
+
+    createCard(repoData) {
+        const card = this.createElement('div', 'card');
+        card.innerHTML = `Name: ${repoData.name}
+                          Owner: ${repoData.owner.login}
+                          Stars: ${repoData.stargazers_count}`;
+        const btnDelete = this.createElement('button', 'btnDelete');
+
+        btnDelete.addEventListener('click', () => {
+            card.remove();
+        })
+        card.append(btnDelete);
+        this.main.prepend(card);
     }
 }
 
@@ -36,7 +54,7 @@ const REPO_PER_PAGE = 5;
 class Search {
     constructor(view) {
         this.view = view;
-        this.view.searchInput.addEventListener('keyup', this.debounce(this.searchRepos.bind(this), 400));
+        this.view.searchInput.addEventListener('keyup', this.debounce(this.searchRepos.bind(this), 300));
     }
 
     async searchRepos() {
@@ -56,6 +74,10 @@ class Search {
             this.view.requestsBox.classList.remove('active');
         }
         
+    }
+
+    addRepoCard() {
+        this.view.createCard();
     }
 
     clearRepos() {
