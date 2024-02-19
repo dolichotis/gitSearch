@@ -8,8 +8,6 @@ class View {
         this.searchLine = this.createElement('div', 'searchLine');
         this.searchInput = this.createElement('input', 'searchInput');
         this.requestsBox = this.createElement('ul', 'requestsBox');
-        this.request = this.createElement('li', 'request');
-        this.requestsBox.append(this.request);
         this.searchLine.append(this.searchInput);
         this.searchLine.append(this.requestsBox);
         
@@ -27,8 +25,9 @@ class View {
     }
 
     createRepo(repoData) {
-        let listData;
-        this.request.innerHTML = `${repoData.name}`;
+        const request = this.createElement('li', 'request');
+        request.innerHTML = `${repoData.name}`;
+        this.requestsBox.append(request);
     }
 }
 
@@ -47,6 +46,7 @@ class Search {
             .then(res => {
                 if (res.ok) res.json().then(res => {
                     console.log(res);
+                    this.clearRepos();
                     res.items.forEach(repo => this.view.createRepo(repo));
                     this.view.requestsBox.classList.add('active');
                 })
