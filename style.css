@@ -66,8 +66,8 @@ body {
 .btnDelete {
     width: 40px;
     height: 40px;
-    background: url('img/Vector\ 7.svg') no-repeat,
-                url('img/Vector\ 8.svg') no-repeat;
+    background: url('img/Vector7.svg') no-repeat,
+                url('img/Vector8.svg') no-repeat;
     background-size: 100% 100%;
     border: none;
     margin: auto;
